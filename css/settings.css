@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-h1-color: black;
+    --second-h1-color: white;
+    --main-bg-color: #3B4498;
+    --second-bg-color: #52A0D4;
+    --correct-bg-color: #20A220;
+    --wrong-bg-color: #FF0000;
+    --main-h1-font: 'Erica One', cursive; 
+    --second-h1-font: 'Bowlby One SC', cursive;
+    --main-text-font:'Roboto', sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+    background:#E0F618 url("../images/bg-image.jpg");
+    /* opacity: 0.8; */
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-h1{
+    font-size: 40px;
+    font-family: var(--second-h1-font);
+    text-transform: uppercase;
+    color: var(--second-h1-color);
+    letter-spacing: 2px;
+    padding-top: 30px;
+}
+
+.form-container{
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.input{
+    display:flex;
+    flex-direction: column;
+}
+
+.input label{
+    font-size: 15px;
+    font-family: var(--main-text-font);
+    font-weight: 900;
+    padding-top: 80px;
+}
+
+input{
+    height: 40px;
+    border-radius: 5px;
+}
+
+
+.form-h1{
+    font-size: 14px;
+    font-family: var(--main-text-font);
+    font-weight: 900;
+    padding-top: 30px;
+    font-weight: 900;
+}
+
+
+.add-question{
+    display:flex;
+    flex-direction: row !important;
+    justify-content: center;
+    padding-top: 10px;
+    color: var(--second-h1-color);
+    font-family: var(--main-text-font);
+
+}
+
+form button{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--main-bg-color);
+    border-color: var(--main-bg-color);
+    color: var(--second-h1-color);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.nrOfQuestions{
+    padding: 0 15px 0 15px;
+}
+
+
+.footer{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.footer .button-container a{
+    padding: 15px 50px 15px 50px;
+    border-radius: 10px;
+    background: var(--main-bg-color);
+    border-color: var(--main-bg-color);
+    color: var(--second-h1-color);
+    font-family: var(--main-text-font);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 900;
+}   

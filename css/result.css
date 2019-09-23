@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-h1-color: #403333;
+    --second-h1-color: white;
+    --main-bg-color: #3B4498;
+    --second-bg-color: #52A0D4;
+    --correct-bg-color: #20A220;
+    --wrong-bg-color: #FF0000;
+    --main-h1-font: 'Erica One', cursive; 
+    --second-h1-font: 'Bowlby One SC', cursive;
+    --main-text-font:'Roboto', sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+    background:#E0F618 url("../images/bg-image.jpg");
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header-h1{
+    font-family: var(--main-h1-font);
+    color: var(--second-h1-color);
+    font-size: 50px;
+    padding-top: 30px;
+}
+
+.footer{
+    margin-top: 25px;
+    display:flex;
+    justify-content: center;
+}
+
+
+.footer .bottom-container a{
+    padding: 15px 40px 15px 40px;
+    border-radius: 10px;
+    background: var(--main-bg-color);
+    border-color: var(--main-bg-color);
+    color: var(--second-h1-color);
+    font-family: var(--main-text-font);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 900;
+} 
