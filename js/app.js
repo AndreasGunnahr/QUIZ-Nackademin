@@ -66,7 +66,6 @@ const questions = [
 ]
 
 
-// function startGame(){
 
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
@@ -85,14 +84,17 @@ function setNextQuestion() {
     document.getElementById("nrOfQuestions").innerHTML = "question " + questionNumber + " of 4"
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
+// "<i class=fas fa-times-circle></i>"
 
 function showQuestion(question) {
     questionElement.innerText = question.question;
     for (let x = 0; x < 4; x++) {
-        answerButtons[x].innerText = question.answers[x].text;
 
         if (question.answers[x].correct) {
+            answerButtons[x].innerHTML =  "<i class='fas fa-check-circle'></i>"+"<span>" + question.answers[x].text + "</span>";
             answerButtons[x].dataset.correct = question.answers[x].correct;
+        }else{
+            answerButtons[x].innerHTML =  "<i class='fas fa-times-circle'></i>" + "<span>" + question.answers[x].text + "</span>";
         }
         answerButtons[x].addEventListener('click', selectAnswer);
     }
@@ -123,8 +125,16 @@ function selectAnswer(e) {
         document.getElementById('next-btn').id = "show-btn";
         document.getElementById('show-btn').innerHTML = "Show result";
         document.getElementById('show-btn').addEventListener('click',showResult());
-        
     }
+    showIcons(); 
+}
+
+function showIcons(){
+    let len = document.getElementsByClassName("fa-times-circle").length;
+    for(let x = 0; x < len; x++){
+        document.getElementsByClassName("fa-times-circle")[x].style.visibility = "visible";
+    }
+    document.getElementsByClassName("fa-check-circle")[0].style.visibility = "visible";
 }
 
 function resetState() {
@@ -141,6 +151,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
+        // console.log(document.getElementsByClassName('answer'));
     } else {
         element.classList.add("wrong");
     }

@@ -93,6 +93,7 @@
     font-weight: 900;
     /* text-align: center; */
     cursor: pointer;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,13 +116,7 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 900;
-    
 } 
-
-.show-result{
-    /* display: flex; */
-}
-
   
 .correct{
     background-color: var(--correct-bg-color);
@@ -135,7 +130,7 @@
 
 .CW-container{
     display:flex;
-    justify-content: center;
+    justify-content: center; 
     height: 30px;
     margin-top: -100px;
     visibility: hidden;
@@ -148,10 +143,23 @@
     font-weight: 900;
 }
 
-i{
-    font-size:20px;
-    float: left !important;
+span{
+    width: 100%;
+    margin-right: 30px;
+    /* margin-right: -190px; */
+    /* margin-right: 190px; */
+}
+
+.fa-times-circle{
+    font-size: 20px;
     margin-left: 10px;
-   
- 
+    color: var(--second-h1-color);
+    visibility: hidden;
+}
+
+.fa-check-circle{
+    font-size: 20px;
+    margin-left: 10px;
+    color: var(--second-h1-color);  
+    visibility: hidden;
 }
