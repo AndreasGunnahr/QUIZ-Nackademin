@@ -61,15 +61,29 @@
     border: 1px solid #707070;
     transform: skew(-2deg);
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
 
 }
 
-.inner-container h1{
-    font-size: 12px;
+.question{
+    font-size: 15px;
     font-family: var(--main-text-font);
     font-weight: 900;
+    padding: 0 10px 0 10px;
+    letter-spacing: 1px;
+}
+
+.category{
+    /* height: 50px; */
+    font-size: 20px;
+    font-family: var(--second-h1-font);
+    color: var(--main-bg-color);
+    font-weight: 900;
+    /* margin-top: -45px; */
+    /* margin-top: 0; */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 .button-container{
@@ -91,13 +105,38 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 900;
-    /* text-align: center; */
     cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    outline: none;
+    text-align: center;
 }
+
+
+.fa-times-circle{
+    font-size: 20px;
+    margin-left: 10px;
+    color: var(--second-h1-color);
+    visibility: hidden;
+    pointer-events: none;
+    float: left;
+
+}
+
+.fa-check-circle{
+    font-size: 20px;
+    margin-left: 10px;
+    /* margin-right: 100px; */
+    color: var(--second-h1-color);  
+    visibility: hidden;
+    pointer-events: none;
+    float: left;
+}
+
+.answer span{
+    pointer-events: none;
+
+}
+
+
 
 .footer{
     margin-top: 25px;
@@ -141,25 +180,4 @@
     letter-spacing: 2px;
     font-family: var(--main-text-font);
     font-weight: 900;
-}
-
-span{
-    width: 100%;
-    margin-right: 30px;
-    /* margin-right: -190px; */
-    /* margin-right: 190px; */
-}
-
-.fa-times-circle{
-    font-size: 20px;
-    margin-left: 10px;
-    color: var(--second-h1-color);
-    visibility: hidden;
-}
-
-.fa-check-circle{
-    font-size: 20px;
-    margin-left: 10px;
-    color: var(--second-h1-color);  
-    visibility: hidden;
 }

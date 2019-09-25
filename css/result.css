@@ -106,14 +106,14 @@
     margin-top: 10px;
 }
 
-.nrOfCorrectAnswers{
+#nrOfCorrectAnswers{
     font-size: 15px;
     font-family: var(--main-text-font);
     font-weight: 900;
     margin-left: 10px;
 }
 
-.nrOfCorrectAnswers span{
+#nrOfCorrectAnswers span{
     font-size: 20px;
     font-family: var(--second-h1-font);
     font-weight: 900;

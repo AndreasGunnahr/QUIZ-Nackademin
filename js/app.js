@@ -1,36 +1,73 @@
-// let username = document.getElementById("userinput").value;
-let shuffledQuestions, currentQuestionIndex;
+class Quiz {
+    constructor(username, questions) {
+        this.username = username;           // Spelarens användarnamn
+        this.questions = questions;         // Vilka frågor som ingår i spelomgången.
+        this.correctQuantity = 0;           // Antal svar som är rätt av användaren.
+        this.wrongQuantity = 0;             // Antal svar som är fel av användaren.
+    }
+    // previousQuestion(){}
+}
 
+
+// class Question {
+//     constructor(category,question,answers,correct) {
+//         this.category = category;                       // Frågekategori.
+//         this.question = question;                       // Frågan.
+//         this.answers = answers;                         // Svarsalternativ.
+//         this.correct = correct;                         // Fel respektive rätt svarsalternativ. 
+//     }
+// }
+
+let shuffledQuestions, currentQuestionIndex;
+const restartButton = document.getElementById("play-again-btn");
 const startButton = document.getElementById("start-btn");
-let nrQuestions = document.getElementById("nrQuestions");
 const questionElement = document.getElementById("question");
 let answerButtons = document.getElementsByClassName("answer");
+const nrQuestions = document.getElementById("nrQuestions");
 const nextButton = document.getElementById("next-btn");
 const addButton = document.getElementById("add");
 const removeButton = document.getElementById("remove");
 var playerName; 
 var totalNrQuestions;
-// console.log(answerButtons);
-
-
-// let test = new Question("Sport","Vem vann SM guld 2018?", [{ text: "4"},{ text: "3"},{ text: "5"},{ text: "1"}],[{correct: true},{correct: false},{correct: false},{correct: false}]);
-
-// console.log(test.category);
+let arrQuestions = [];
+let nrOfCorrects = 0;
 
 
 
 const questions = [
     {
-        question: 'What is 2 +2',
+        category: 'Sport',
+        question: 'Vilken fotbollsspelare har spelat allra flest landskamper i svenska fotbollslandslaget?',
         answers: [
-            { text: "4", correct: true },
-            { text: "3", correct: false },
-            { text: "5", correct: false },
-            { text: "1", correct: false }
+            { text: "Henrik Larsson", correct: false },
+            { text: "Andreas Isaksson", correct: false },
+            { text: "Anders Svensson", correct: true  },
+            { text: "Carl Hörjström", correct: false }
         ]
     },
     {
-        question: 'What is 2 + 4',
+        category: 'Food',
+        question: 'What is 2 + 4?',
+        answers: [
+            { text: "15", correct: false },
+            { text: "16", correct: false },
+            { text: "17", correct: false },
+            { text: "19", correct: true }
+        ]
+    },
+    {   
+        category: 'Sport',
+        question: 'Vad är en ”Birdie” inom golf?',
+        answers: [
+            { text: "När man slår i bollen på ett enda slag", correct: false },
+            { text: "När man slår i bollen 1 slag över par", correct: false },
+            { text: "När man slår i bollen 1 slag under par", correct: true },
+            { text: "När man slår i bollen i ett vattenhål", correct: false }
+        ]
+    },
+    {
+        category: 'Food',
+        question: 'What is 21d + 4?',
         answers: [
             { text: "15", correct: false },
             { text: "16", correct: false },
@@ -39,15 +76,7 @@ const questions = [
         ]
     },
     {
-        question: 'What is 2 + 6',
-        answers: [
-            { text: "100", correct: false },
-            { text: "3", correct: true },
-            { text: "101", correct: false },
-            { text: "105", correct: false }
-        ]
-    },
-    {
+        category: 'Programming',
         question: 'What is 2 + 3',
         answers: [
             { text: "25", correct: false },
@@ -55,33 +84,84 @@ const questions = [
             { text: "75", correct: true },
             { text: "74", correct: false }
         ]
-    }
+    },
+    {
+        category: 'Food',
+        question: 'What is 2907 + 4?',
+        answers: [
+            { text: "15", correct: false },
+            { text: "16", correct: false },
+            { text: "17", correct: false },
+            { text: "19", correct: true }
+        ]
+    },
+    {   
+        category: 'Sport',
+        question: 'Vilken idrott i Sverige har nästflest utövare i Sverige efter fotboll?',
+        answers: [
+            { text: "Ishockey", correct: false },
+            { text: "Handboll", correct: false },
+            { text: "Innebandy", correct: true },
+            { text: "Simning", correct: false }
+        ]
+    },
+    {
+        category: 'Programming',
+        question: 'What is 299 + 3',
+        answers: [
+            { text: "25", correct: false },
+            { text: "50", correct: false },
+            { text: "75", correct: true },
+            { text: "74", correct: false }
+        ]
+    },
+    {
+        category: 'Food',
+        question: 'What is 2 + 4123?',
+        answers: [
+            { text: "15", correct: false },
+            { text: "16", correct: false },
+            { text: "17", correct: false },
+            { text: "19", correct: true }
+        ]
+    },
+    {   
+        category: 'Sport',
+        question: 'Vilka två sporter ingår i en nordisk komination?',
+        answers: [
+            { text: "Skidskytte & slalom", correct: false },
+            { text: "Backhoppning & längdskidåkning", correct: true },
+            { text: "Super G & konståkning", correct: false },
+            { text: "Ishockey & bandy", correct: false }
+        ]
+    },
+    {
+        category: 'Programming',
+        question: 'What is 23 + 3',
+        answers: [
+            { text: "25", correct: false },
+            { text: "50", correct: false },
+            { text: "75", correct: true },
+            { text: "74", correct: false }
+        ]
+    },
+    {
+        category: 'Programming',
+        question: 'What is 210 + 3',
+        answers: [
+            { text: "25", correct: false },
+            { text: "50", correct: false },
+            { text: "75", correct: true },
+            { text: "74", correct: false }
+        ]
+    },
 ]
-
-class Question {
-    constructor(category,question,answers,correct) {
-        this.category = category;                       // Frågekategori.
-        this.question = question;                       // Frågan.
-        this.answers = answers;                         // Svarsalternativ.
-        this.correct = correct;                         // Fel respektive rätt svarsalternativ. 
-    }
-}
-
-class Quiz {
-    constructor(username, questions, correctQuantity, wrongQuantity) {
-        this.username = username;                       // Spelarens användarnamn
-        this.questions = questions;                     // Vilka frågor som ingår i spelomgången.
-        this.correctQuantity = correctQuantity;         // Antal svar som är rätt av användaren.
-        this.wrongQuantity = wrongQuantity;             // Antal svar som är fel av användaren.
-    }
-
-}
 
 // Kontroll av settings.
 if(startButton){
-    totalNrQuestions = 4;
+    totalNrQuestions = 1;
     addButton.addEventListener("click", () =>{
-        if(totalNrQuestions < 8){
+        if(totalNrQuestions < 4){
             nrQuestions.innerText = totalNrQuestions+1;
             totalNrQuestions ++;
         }
@@ -97,13 +177,9 @@ if(startButton){
         var category = document.getElementById("category").value;
         window.localStorage.setItem("saveCategory",category);
         window.localStorage.setItem("savePlayername",playername);
-        // totalNrQuestions = totalNrQuestions;
         window.localStorage.setItem("SaveNrOfQuestions",totalNrQuestions);
     });
 }
-
-
-
 
 
 // Kontroll av spel.
@@ -115,11 +191,23 @@ if(nextButton){
     });
 }
 
+if(restartButton){
+    ResultPage();
+}
+
 function startGame(){
-    playername = window.localStorage.getItem("savePlayername");
+    // playername = window.localStorage.getItem("savePlayername");
     category = window.localStorage.getItem("saveCategory");
     totalNrQuestions = window.localStorage.getItem("SaveNrOfQuestions");
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    // Sparar alla frågor som är av rätt kategori i en separat array. 
+    for(let x = 0; x < questions.length; x++){
+        if(questions[x].category == category){
+            arrQuestions.push(questions[x]);
+       }
+    }
+    console.log(arrQuestions);
+    shuffledQuestions = arrQuestions.sort(() => Math.random() - .5);
+    console.log(shuffledQuestions);
     currentQuestionIndex = 0;
     setNextQuestion();
 }
@@ -128,26 +216,28 @@ function startGame(){
 function setNextQuestion() {
     resetState();
     questionNumber = currentQuestionIndex + 1;
-    document.getElementById("nrOfQuestions").innerHTML = "question " + questionNumber + " of 4"
+    document.getElementById("nrOfQuestions").innerHTML = "question " + questionNumber + " of " + totalNrQuestions;
+    document.getElementById("category").innerHTML = category;
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question;
-    for (let x = 0; x < 4; x++) {
-
-        if (question.answers[x].correct) {
-            answerButtons[x].innerHTML =  "<i class='fas fa-check-circle'></i>"+"<span>" + question.answers[x].text + "</span>";
-            answerButtons[x].dataset.correct = question.answers[x].correct;
-        }else{
-            answerButtons[x].innerHTML =  "<i class='fas fa-times-circle'></i>" + "<span>" + question.answers[x].text + "</span>";
+        questionElement.innerText = question.question;
+        for (let x = 0; x < 4; x++) {
+            if (question.answers[x].correct) {
+                console.log( answerButtons[x].innerHTML);
+                answerButtons[x].innerHTML =  "<i class='fas fa-check-circle'></i>" + question.answers[x].text ;
+                answerButtons[x].dataset.correct = question.answers[x].correct;
+            }else{
+                answerButtons[x].innerHTML =  "<i class='fas fa-times-circle'></i>" + "<span>" + question.answers[x].text + "</span>";
+            }
+            answerButtons[x].addEventListener('click', selectAnswer);
         }
-        answerButtons[x].addEventListener('click', selectAnswer);
     }
-}
 
 function selectAnswer(e) {
     const selectedButton = e.target;
+    console.log(selectedButton);
     const correct = selectedButton.dataset.correct;
     for (let x = 0; x < 4; x++) {
         setStatusClass(answerButtons[x], answerButtons[x].dataset.correct)
@@ -156,20 +246,26 @@ function selectAnswer(e) {
         document.getElementsByClassName("CW-container")[0].style.visibility = "visible";
         document.getElementsByClassName("CW-container")[0].style.color = "#20A220";
         document.getElementsByClassName("CW-h1")[0].innerHTML = "CORRECT!";
+        nrOfCorrects += 1; 
+
     }else{
         document.getElementsByClassName("CW-container")[0].style.visibility = "visible";
         document.getElementsByClassName("CW-container")[0].style.color = "#FF0000";
         document.getElementsByClassName("CW-h1")[0].innerHTML = "WRONG!";
     }
-
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+  
+    if (totalNrQuestions > currentQuestionIndex + 1) {   
         // Om vi inte har slut på frågor
     } else {
         console.log("SLUT");
         // Om vi har slut på frågor 
+        console.log(nrOfCorrects);
+        window.localStorage.setItem("nrOfCorrects",nrOfCorrects);
         document.getElementById('next-btn').id = "show-btn";
         document.getElementById('show-btn').innerHTML = "Show result";
-        document.getElementById('show-btn').addEventListener('click',showResultPag);
+        document.getElementById('show-btn').addEventListener('click', () => {
+            document.getElementById('show-btn').href = "result.html";
+        });
     }
     showIcons(); 
 }
@@ -204,10 +300,12 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove("correct");
     element.classList.remove("wrong");
+
 }
-
-
-function showResultPage(){
-    document.getElementById('show-btn').href = "result.html";
+function ResultPage(){
+    let titles = ["Master","Champion","Looser"]; 
+    totalNrQuestions = window.localStorage.getItem("SaveNrOfQuestions");
+    nrOfCorrects = window.localStorage.getItem("nrOfCorrects");
+    document.getElementById("nrOfCorrectAnswers").innerHTML = "You got " + "<span>" + nrOfCorrects + "</span>" + " of" + " <span>" + totalNrQuestions + "</span>" + " questions right!";
 }
 
