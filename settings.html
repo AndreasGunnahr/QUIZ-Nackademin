@@ -18,21 +18,28 @@
             <div class = "form-container">
                 <form>
                     <div class = "input">
-                        <label class = "label-username" for = "username">Username</label>
+                        <label class = "label-username" for = "username">Playername</label>
                         <input id = "userinput" class = "username" placeholder = "Enter your username">
                     </div>
-                    <h1 class = "form-h1">Choose how many questions you want.</h1>
+                    <h1 class = "select-h1">Choose your question category</h1>
+                    <select id = "category">
+                        <option value = "Sport">Sport</option>
+                        <option value = "Programming">Programming</option>
+                        <option value = "Famous people">Famous people</option>
+                        <option value = "Food">Food</option>
+                    </select>
+                    <h1 class = "addRemove-h1">Choose how many questions you want</h1>
                     <div class = "add-question">
-                        <button class = "add">+</button>
-                        <h1 class = "nrOfQuestions">8</h1>
-                        <button class = "remove">-</button>
+                        <button id = "add" class = "add" type='button'>+</button>
+                        <h1 id = "nrQuestions" class = "nrOfQuestions">4</h1>
+                        <button  id = "remove" class = "remove" type='button'>-</button>
                     </div>
                 </form>
             </div>
             <div class = "footer">
                 <div class = "button-container">
                     <a href = "index.html" class = "back">Back</a>
-                    <a href = "game.html" id = "start-btn" class = "start-game" >Start game</a>
+                    <a href = "game.html" id = "start-btn" class = "start-game">Start game</a>
                 </div>
             </div>
         </div>

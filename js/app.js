@@ -1,14 +1,16 @@
 // let username = document.getElementById("userinput").value;
 let shuffledQuestions, currentQuestionIndex;
 
-const nextButton = document.getElementById("next-btn");
 const startButton = document.getElementById("start-btn");
-const nrOfQuestions = document.getElementById("nrOfQuestions");
+let nrQuestions = document.getElementById("nrQuestions");
 const questionElement = document.getElementById("question");
-// let answerButtons = document.getElementById("answer");
-let questionNumber = 0;
-
-console.log(answerButtons);
+let answerButtons = document.getElementsByClassName("answer");
+const nextButton = document.getElementById("next-btn");
+const addButton = document.getElementById("add");
+const removeButton = document.getElementById("remove");
+var playerName; 
+var totalNrQuestions;
+// console.log(answerButtons);
 
 
 // let test = new Question("Sport","Vem vann SM guld 2018?", [{ text: "4"},{ text: "3"},{ text: "5"},{ text: "1"}],[{correct: true},{correct: false},{correct: false},{correct: false}]);
@@ -75,30 +77,48 @@ class Quiz {
 
 }
 
-
-if(startButton != null){
-    let username = document.getElementById("userinput").value;
-    localStorage.setItem("saveUsername",username);
-    startButton.addEventListener("click", startGame);
-
-    // startGame();
-    // Access username localStorage.getItem("saveUsername");
-    // });
+// Kontroll av settings.
+if(startButton){
+    totalNrQuestions = 4;
+    addButton.addEventListener("click", () =>{
+        if(totalNrQuestions < 8){
+            nrQuestions.innerText = totalNrQuestions+1;
+            totalNrQuestions ++;
+        }
+    });
+    removeButton.addEventListener("click", () =>{
+        if(totalNrQuestions > 1 ){
+            nrQuestions.innerHTML = totalNrQuestions-1;
+            totalNrQuestions --;
+        }
+    });
+    startButton.addEventListener("click", () => {
+        var playername = document.getElementById("userinput").value;
+        var category = document.getElementById("category").value;
+        window.localStorage.setItem("saveCategory",category);
+        window.localStorage.setItem("savePlayername",playername);
+        // totalNrQuestions = totalNrQuestions;
+        window.localStorage.setItem("SaveNrOfQuestions",totalNrQuestions);
+    });
 }
 
-if(nextButton != null){
+
+
+
+
+// Kontroll av spel.
+if(nextButton){
+    startGame();
     nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     setNextQuestion();
     });
 }
 
-
 function startGame(){
-    let answerButtons = document.getElementById("answer");
-    console.log(answerButtons);
-    console.log(localStorage.getItem("saveUsername"));
-    console.log("Här");
+    playername = window.localStorage.getItem("savePlayername");
+    category = window.localStorage.getItem("saveCategory");
+    totalNrQuestions = window.localStorage.getItem("SaveNrOfQuestions");
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     setNextQuestion();
@@ -149,7 +169,7 @@ function selectAnswer(e) {
         // Om vi har slut på frågor 
         document.getElementById('next-btn').id = "show-btn";
         document.getElementById('show-btn').innerHTML = "Show result";
-        document.getElementById('show-btn').addEventListener('click',showResultPage());
+        document.getElementById('show-btn').addEventListener('click',showResultPag);
     }
     showIcons(); 
 }
@@ -164,7 +184,6 @@ function showIcons(){
 
 function resetState() {
     for (let x = 0; x < 4; x++) {
-        // console.log(answerButtons[x]);
         answerButtons[x].removeAttribute("data-correct");
         answerButtons[x].classList.remove("correct");
         answerButtons[x].classList.remove("wrong");
@@ -191,3 +210,4 @@ function clearStatusClass(element) {
 function showResultPage(){
     document.getElementById('show-btn').href = "result.html";
 }
+
