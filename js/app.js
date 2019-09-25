@@ -1,29 +1,20 @@
-class Quiz {
-    constructor(username, questions, correctQuantity, wrongQuantity) {
-        this.username = username;                       // Spelarens användarnamn
-        this.questions = questions;                     // Vilka frågor som ingår i spelomgången.
-        this.correctQuantity = correctQuantity;         // Antal svar som är rätt av användaren.
-        this.wrongQuantity = wrongQuantity;             // Antal svar som är fel av användaren.
-    }
-}
-
-class Question {
-    constructor(category,question,answers,correct) {
-        this.category = category;                       // Frågekategori.
-        this.question = question;                       // Frågan.
-        this.answers = answers;                         // Svarsalternativ.
-        this.correct = correct;                         // Fel respektive rätt svarsalternativ. 
-    }
-}
-
-
+// let username = document.getElementById("userinput").value;
 let shuffledQuestions, currentQuestionIndex;
-const startButton = document.getElementById("start-btn");
+
 const nextButton = document.getElementById("next-btn");
+const startButton = document.getElementById("start-btn");
 const nrOfQuestions = document.getElementById("nrOfQuestions");
 const questionElement = document.getElementById("question");
-let answerButtons = document.getElementsByClassName("answer");
+// let answerButtons = document.getElementById("answer");
 let questionNumber = 0;
+
+console.log(answerButtons);
+
+
+// let test = new Question("Sport","Vem vann SM guld 2018?", [{ text: "4"},{ text: "3"},{ text: "5"},{ text: "1"}],[{correct: true},{correct: false},{correct: false},{correct: false}]);
+
+// console.log(test.category);
+
 
 
 const questions = [
@@ -65,17 +56,53 @@ const questions = [
     }
 ]
 
+class Question {
+    constructor(category,question,answers,correct) {
+        this.category = category;                       // Frågekategori.
+        this.question = question;                       // Frågan.
+        this.answers = answers;                         // Svarsalternativ.
+        this.correct = correct;                         // Fel respektive rätt svarsalternativ. 
+    }
+}
+
+class Quiz {
+    constructor(username, questions, correctQuantity, wrongQuantity) {
+        this.username = username;                       // Spelarens användarnamn
+        this.questions = questions;                     // Vilka frågor som ingår i spelomgången.
+        this.correctQuantity = correctQuantity;         // Antal svar som är rätt av användaren.
+        this.wrongQuantity = wrongQuantity;             // Antal svar som är fel av användaren.
+    }
+
+}
 
 
-nextButton.addEventListener("click", () => {
+if(startButton != null){
+    let username = document.getElementById("userinput").value;
+    localStorage.setItem("saveUsername",username);
+    startButton.addEventListener("click", startGame);
+
+    // startGame();
+    // Access username localStorage.getItem("saveUsername");
+    // });
+}
+
+if(nextButton != null){
+    nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     setNextQuestion();
-});
+    });
+}
 
 
-shuffledQuestions = questions.sort(() => Math.random() - .5);
-currentQuestionIndex = 0;
-setNextQuestion();
+function startGame(){
+    let answerButtons = document.getElementById("answer");
+    console.log(answerButtons);
+    console.log(localStorage.getItem("saveUsername"));
+    console.log("Här");
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    setNextQuestion();
+}
 
 
 function setNextQuestion() {
@@ -84,7 +111,6 @@ function setNextQuestion() {
     document.getElementById("nrOfQuestions").innerHTML = "question " + questionNumber + " of 4"
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
-// "<i class=fas fa-times-circle></i>"
 
 function showQuestion(question) {
     questionElement.innerText = question.question;
@@ -118,13 +144,12 @@ function selectAnswer(e) {
 
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         // Om vi inte har slut på frågor
-        console.log("kör på");
     } else {
+        console.log("SLUT");
         // Om vi har slut på frågor 
-        console.log("slut på frågor");
         document.getElementById('next-btn').id = "show-btn";
         document.getElementById('show-btn').innerHTML = "Show result";
-        document.getElementById('show-btn').addEventListener('click',showResult());
+        document.getElementById('show-btn').addEventListener('click',showResultPage());
     }
     showIcons(); 
 }
@@ -139,6 +164,7 @@ function showIcons(){
 
 function resetState() {
     for (let x = 0; x < 4; x++) {
+        // console.log(answerButtons[x]);
         answerButtons[x].removeAttribute("data-correct");
         answerButtons[x].classList.remove("correct");
         answerButtons[x].classList.remove("wrong");
@@ -151,7 +177,6 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        // console.log(document.getElementsByClassName('answer'));
     } else {
         element.classList.add("wrong");
     }
@@ -163,6 +188,6 @@ function clearStatusClass(element) {
 }
 
 
-function showResult(){
+function showResultPage(){
     document.getElementById('show-btn').href = "result.html";
 }

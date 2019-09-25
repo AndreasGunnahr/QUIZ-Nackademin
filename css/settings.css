@@ -19,7 +19,6 @@
 .wrapper{
     height: 100vh;
     background:#E0F618 url("../images/bg-image.jpg");
-    /* opacity: 0.8; */
     background-size: cover;
     display:flex;
     flex-direction: column;
@@ -49,18 +48,26 @@
     flex-direction: column;
 }
 
-.input label{
+.username{
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.label-username{
     font-size: 15px;
     font-family: var(--main-text-font);
     font-weight: 900;
     padding-top: 80px;
+    padding-left: 5px;
 }
 
-input{
-    height: 40px;
-    border-radius: 5px;
+.add,
+.remove{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .form-h1{
     font-size: 14px;
