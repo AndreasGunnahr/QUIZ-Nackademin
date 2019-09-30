@@ -4,7 +4,8 @@ class Quiz {
         this.numberOfQuestions = 1;         // Antal frågor som spelaren vill ha. 
         this.thisGameQuestions = [];        // Vilka frågor som ingår i spelomgången.
         this.correctAnswers = 0;           // Antal svar som är rätt av användaren.
-        this.wrongAnswers = 0;             // Antal svar som är fel av användaren.
+        this.wrongAnswers = 0;   
+        this.prevQuestion = [];          // Antal svar som är fel av användaren.
     }
 
     addQuestion(){

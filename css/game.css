@@ -117,10 +117,6 @@
     text-align: center;
 }
 
-i {
-    visibility: hidden;
-}
-
 .fa-times-circle,
 .fa-check-circle{
     font-size: 20px;
@@ -179,7 +175,11 @@ i {
     color: var(--second-h1-color);
     font-family: var(--main-text-font);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 900;
 } 
+
+#back-btn{
+    visibility: hidden;
+}
   
