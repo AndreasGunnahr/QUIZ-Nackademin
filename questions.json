@@ -1,0 +1,125 @@
+{
+    "questions" :[
+        {
+            "category": "Sport",
+            "question": "Vilken fotbollsspelare har spelat allra flest landskamper i svenska fotbollslandslaget?",
+            "answers": [
+                { "text": "Henrik Larsson", "correct": false },
+                { "text": "Andreas Isaksson", "correct": false },
+                { "text": "Anders Svensson", "correct": true  },
+                { "text": "Carl Hörjström", "correct": false }
+            ]
+        },
+        {
+            "category": "Food",
+            "question": "What is 2 + 4?",
+            "answers": [
+                { "text": "15", "correct": false },
+                { "text": "16", "correct": false },
+                { "text": "17", "correct": false },
+                { "text": "19", "correct": true }
+            ]
+        },
+        {   
+            "category": "Sport",
+            "question": "Vad är en ”Birdie” inom golf?",
+            "answers": [
+                { "text": "När man slår i bollen på ett enda slag", "correct": false },
+                { "text": "När man slår i bollen 1 slag över par", "correct": false },
+                { "text": "När man slår i bollen 1 slag under par", "correct": true },
+                { "text": "När man slår i bollen i ett vattenhål", "correct": false }
+            ]
+        },
+        {
+            "category": "Food",
+            "question": "What is 21d + 4?",
+            "answers": [
+                { "text": "15", "correct": false },
+                { "text": "16", "correct": false },
+                { "text": "17", "correct": false },
+                { "text": "19", "correct": true }
+            ]
+        },
+        {
+            "category": "Programming",
+            "question": "What is 2 + 3",
+            "answers": [
+                { "text": "25", "correct": false },
+                { "text": "50", "correct": false },
+                { "text": "75", "correct": true },
+                { "text": "74", "correct": false }
+            ]
+        },
+        {
+            "category": "Food",
+            "question": "What is 2907 + 4?",
+            "answers": [
+                { "text": "15", "correct": false },
+                { "text": "16", "correct": false },
+                { "text": "17", "correct": false },
+                { "text": "19", "correct": true }
+            ]
+        },
+        {   
+            "category": "Sport",
+            "question": "Vilken idrott i Sverige har nästflest utövare i Sverige efter fotboll?",
+            "answers": [
+                { "text": "Ishockey", "correct": false },
+                { "text": "Handboll", "correct": false },
+                { "text": "Innebandy", "correct": true },
+                { "text": "Simning", "correct": false }
+            ]
+        },
+        {
+            "category": "Programming",
+            "question": "What is 299 + 3",
+            "answers": [
+                { "text": "25", "correct": false },
+                { "text": "50", "correct": false },
+                { "text": "75", "correct": true },
+                { "text": "74", "correct": false }
+            ]
+        },
+        {
+            "category": "Food",
+            "question": "What is 2 + 4123?",
+            "answers": [
+                { "text": "15", "correct": false },
+                { "text": "16", "correct": false },
+                { "text": "17", "correct": false },
+                { "text": "19", "correct": true }
+            ]
+        },
+        {   
+            "category": "Sport",
+            "question": "Vilka två sporter ingår i en nordisk komination?",
+            "answers": [
+                { "text": "Skidskytte & slalom", "correct": false },
+                { "text": "Backhoppning & längdskidåkning", "correct": true },
+                { "text": "Super G & konståkning", "correct": false },
+                { "text": "Ishockey & bandy", "correct": false }
+            ]
+        },
+        {
+            "category": "Programming",
+            "question": "What is 23 + 3",
+            "answers": [
+                { "text": "25", "correct": false },
+                { "text": "50", "correct": false },
+                { "text": "75", "correct": true },
+                { "text": "74", "correct": false }
+            ]
+        },
+        {
+            "category": "Programming",
+            "question": "What is 210 + 3",
+            "answers": [
+                { "text": "25", "correct": false },
+                { "text": "50", "correct": false },
+                { "text": "75", "correct": true },
+                { "text": "74", "correct": false }
+            ]
+        }
+    ]
+
+}

@@ -16,7 +16,7 @@
     --main-text-font:'Roboto', sans-serif;
 }
 
-.wrapper{
+#wrapper-settings{
     height: 100vh;
     background:#E0F618 url("../images/bg-image.jpg");
     background-size: cover;
@@ -73,6 +73,8 @@ select{
     height: 40px;
     border-radius: 5px;
     padding-left: 5px;
+    background:#ffffff;
+    /* -webkit-appearance:none; */
 }
 
 .add,
@@ -83,7 +85,7 @@ select{
     outline: none;
 }
 
-.addRemove-h1{
+ .addRemove-h1{
     font-size: 14px;
     font-family: var(--main-text-font);
     font-weight: 900;
@@ -124,7 +126,7 @@ form button{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: -5px;
 }
 
 
