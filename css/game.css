@@ -16,17 +16,18 @@
     --main-text-font:'Roboto', sans-serif;
 }
 
-body{
-    background:#E0F618 url("../images/bg-image.jpg");
-    background-size: cover;
+/* body{
+   
     display:flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 
 #wrapper-game{
     height: 100vh;
+    background:#E0F618 url("../images/bg-image.jpg");
+    background-size: cover;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +44,7 @@ body{
     letter-spacing: 2px;
     font-weight: 900;
     color: var(--second-h1-color);
+    margin-top: -30px;
 }
 
 .question-container{
@@ -66,7 +68,7 @@ body{
     width: 260px;
     background-color: var(--second-h1-color);
     border-radius: 5px; 
-    border: 1px solid #707070;
+    border: 1px solid var(--second-bg-color);
     transform: skew(-2deg);
     display: flex;
     align-items: center;
@@ -75,7 +77,7 @@ body{
 }
 
 .question{
-    font-size: 13px;
+    font-size: 12px;
     font-family: var(--main-text-font);
     font-weight: 900;
     padding: 0 10px 0 10px;
@@ -88,6 +90,7 @@ body{
     color: var(--main-bg-color);
     font-weight: 900;
     margin-bottom: 10px;
+    margin-top: 5px;
     letter-spacing: 2px;
 }
 
@@ -162,22 +165,23 @@ body{
 }
 
 .CW-h1{
-    font-size: 22px;
+    font-size: 18px;
     letter-spacing: 2px;
     font-family: var(--main-text-font);
     font-weight: 900;
     visibility: hidden;
+    margin-top: 10px;
 }
 
 .footer{
-    display:flex;
-    justify-content: center;
-    margin-bottom: 10px;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
 }
 
 
 .footer .bottom-container a{
-    padding: 15px 70px 15px 70px;
+    padding: 20px 90px 20px 90px;
     border-radius: 10px;
     background: var(--main-bg-color);
     border-color: var(--main-bg-color);
@@ -185,31 +189,99 @@ body{
     font-family: var(--main-text-font);
     text-decoration: none;
     font-size: 12px;
-    font-weight: 900;
+    
 } 
 
+@media only screen and (min-width: 375px) {
+   .header-h1{
+    font-size: 35px;
+    margin-top: -50px;
+   }
+   .question-container{
+       margin-top: 10px;
+       letter-spacing: 2px;
+   }
+   .outer-container{
+        height: 200px;
+        width: 320px;
+    }
+    .inner-container{
+        height: 180px;
+        width: 300px;
+    }
+    .category{
+        font-size: 20px;
+    }
+    .nrOfAnswers{
+        font-size: 16px;
+    }
+    .question{
+        font-size: 13px;
+    }
+    .answer{
+        width: 320px;
+        font-size: 12px;
+        height: 45px;
+    }
+    .CW-h1{
+        font-size: 22px;
+    }
+    .footer{
+        height: 50px;
+    }
+    .footer .bottom-container a{
+        padding: 20px 90px 20px 90px;
+        font-size: 14px;
+    }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
 
 }
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
+    .header-h1{
+    font-size: 50px;
+    margin-top: -125px;
+   }
+   .question-container{
+       margin-top: -20px;
+       letter-spacing: 2px;
+   }
+   .outer-container{
+        height: 240px;
+        width: 400px;
+    }
+    .inner-container{
+        height: 220px;
+        width: 380px;
+    }
+    .category{
+        font-size: 30px;
+    }
+    .nrOfAnswers{
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .question{
+        font-size: 14px;
+        padding: 0 20px 0 20px;
+    }
+    .answer{
+        font-size: 12px;
+        height: 50px;
+        width: 400px;
+    }
+    .CW-h1{
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    .footer{
+        height: 80px;
+    }
+    .footer .bottom-container a{
+        padding: 25px 200px 25px 200px;
+        font-size: 14px;
+    }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    
-}

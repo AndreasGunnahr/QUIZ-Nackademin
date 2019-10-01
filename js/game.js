@@ -13,8 +13,10 @@ let nrCorrectsInQuestion = 0;
 startGame();
 
 nextButton.addEventListener("click", () => {
-    currentQuestionIndex++;
-    setNextQuestion();
+    if(nrCorrectsInQuestion == 0){
+        currentQuestionIndex++;
+        setNextQuestion();
+    }
 });
 
 function startGame(){
@@ -42,7 +44,7 @@ function showQuestion(question) {
         }
         answerButtons[x].addEventListener('click', selectAnswer);
     }
-    document.getElementById("nrOfAnswers").innerHTML = "Choose " + nrCorrectsInQuestion + " answer";
+    document.getElementById("nrOfAnswers").innerHTML = "Pick " + nrCorrectsInQuestion + " answer";
 }
 
 function selectAnswer(e) {

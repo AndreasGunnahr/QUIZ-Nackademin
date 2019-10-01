@@ -9,7 +9,10 @@ DONE: Fixa till layouten i knapparna (svaren).
 DONE: Fundera på vart vi kan använda oss av spelarens nman. 
 DONE: Kunna välja flera svar som är rätt
 DONE: Fixa så användaren inte kan trycka på samma svar igen. 
+DONE: Fixa så att användaren inte kan gå vidare förens de valt ett eller flera svar. 
 
-TODO: Responsive design.  
+STARTED: Responsive design. 
+ - Setting och Game sidorna är klara.
+ - Result och Index sidorna är kvar.
 TODO: Fundera på desgin val. 
 TODO: Fixa lite fel hantering (Användaren måste ange sitt namn innan man startar t.ex.)
