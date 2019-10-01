@@ -16,13 +16,21 @@
     --main-text-font:'Roboto', sans-serif;
 }
 
-#wrapper-game{
-    height: 100vh;
+body{
     background:#E0F618 url("../images/bg-image.jpg");
     background-size: cover;
     display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#wrapper-game{
+    height: 100vh;
+    display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .header-container{
@@ -150,7 +158,7 @@
     display:flex;
     justify-content: center; 
     height: 40px;
-    margin: 15px 0 15px 0;
+    margin: 10px 0 10px 0;
 }
 
 .CW-h1{
@@ -164,18 +172,19 @@
 .footer{
     display:flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 
 .footer .bottom-container a{
-    padding: 15px 50px 15px 50px;
+    padding: 15px 70px 15px 70px;
     border-radius: 10px;
     background: var(--main-bg-color);
     border-color: var(--main-bg-color);
     color: var(--second-h1-color);
     font-family: var(--main-text-font);
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 900;
 } 
 

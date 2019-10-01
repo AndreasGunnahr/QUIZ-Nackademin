@@ -8,99 +8,28 @@ const backButton = document.getElementById("back-btn");
 const rightWrongH1 = document.getElementsByClassName("CW-h1")[0];
 const rightWrongContainer = document.getElementsByClassName("CW-container")[0];
 let nrCorrectsInQuestion = 0;
-let array = [];
-let testArray = [];
-let newArray = [];
-let secondArray = [];
-let loop = 0;
 
 // ?DONE: Kom på ett bra sätt att använda klassen Quiz respektive Question.
 // ?DONE: Kolla hur man läser in en json file till en array då denna tar mycket plats i JS filen. 
-//! TODO: Tillbaka knapp till varje fråga respektive kunna hålla reda på vilken fråga/svar användaren angav. 
 // ?DONE: Fixa så användaren inte kan klicka flera gånger på ett svar. 
 // *HALF: Fixa till layouten i knapparna (svaren). 
-// TODO: Fundera på vart vi kan använda oss av spelarens nman. 
+// ?DONE: Fundera på vart vi kan använda oss av spelarens nman. 
 // ?DONE: Kunna välja flera svar som är rätt
 
 
 startGame();
 
 nextButton.addEventListener("click", () => {
-    if(testArray.length != 0){
-        array.push(testArray);
-        // secondArray.push(newArray);
-    }
-    // console.log(secondArray);
-    // showPrevQuestion(); 
-    
     currentQuestionIndex++;
-    // console.log(array[currentQuestionIndex]);
-    if(array[currentQuestionIndex] != undefined){
-        showPrevQuestion();
-    }
     setNextQuestion();
 });
-
-backButton.addEventListener("click", () => {
-    if(testArray.length != 0){
-        array.push(testArray);
-        // secondArray.push(newArray);
-    }
-    // console.log(secondArray);
-    // const showButton = document.getElementById('show-btn');
-    // console.log(nextButton);
-    // showButton.id = "next-btn";
-    showPrevQuestion(); 
-});
-
-// Kontroll om vi har kommit till resultat sidan. 
-// if(restartButton){
-//     resultPage();
-// }
 
 function startGame(){
     currentQuestionIndex = 0;
     setNextQuestion();
 }
 
-function showPrevQuestion(){
-    if(loop == 1){
-        nextButton = document.getElementById('show-btn');
-        nextButton.id = "next-btn";
-        nextButton.innerHTML = "Next question";
-        nextButton.addEventListener('click', () => {
-        nextButton.href = "#"
-        });
-        loop = 0;
-    }
-    currentQuestionIndex -= 1;
-    questionNumber -= 1;
-    setNextQuestion();
-    for (let x = 0; x < 4; x++) {
-        let correct = array[currentQuestionIndex][x].dataset.correct;
-        setStatusClass(array[currentQuestionIndex][x], correct);
-    }
-    // nextButton.id = "next-btn";
-    // document.getElementById('next-btn').innerHTML = "Next question";
-    // document.getElementById('next-btn').removeEventListener("click",() => {
-    //     document.getElementById('next-btn').href = "result.html";
-    // });
-
-
-}
-
-function storePrevQuestion(){
-    // array.push([answerButtons[0],answerButtons[1],answerButtons[2],answerButtons[3]]);
-}
-
 function setNextQuestion() {
-    if(currentQuestionIndex != 0){
-        backButton.style.visibility = "visible";
-        // backButton.innerHTML =  "Previous question";
-        // console.log(backButton);
-    }else if(currentQuestionIndex == 0){
-        backButton.style.visibility = "hidden";
-    }
     resetState();
     questionNumber = currentQuestionIndex + 1;
     document.getElementById("nrOfQuestions").innerHTML = "Question " + questionNumber + " of " + quiz.numberOfQuestions;
@@ -124,10 +53,11 @@ function showQuestion(question) {
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
-    // newArray.push(correct);
+    let selectedButton = e.target;
+    let correct = selectedButton.dataset.correct;
     if(nrCorrectsInQuestion != 0){
+        selectedButton.disabled = true;
+        quiz.maxScore += 1;
         for (let x = 0; x < 4; x++) {
             if(nrCorrectsInQuestion > 1){
                 setStatusClass(e.target, selectedButton.dataset.correct);
@@ -151,27 +81,30 @@ function selectAnswer(e) {
             quiz.wrongAnswers += 1;
         }
     }
-
     if (quiz.numberOfQuestions > currentQuestionIndex + 1) { 
         // Om vi inte har slut på frågor så fortsätter vi bara. 
-    } else {
-        loop = 1; 
+    }
+    else if(quiz.numberOfQuestions <= currentQuestionIndex + 1 && nrCorrectsInQuestion == 0) {
         // Om vi har slut på frågor så visar vi Show result knappen. 
         nextButton.id = "show-btn";
         const showButton = document.getElementById('show-btn');
         showButton.innerHTML = "Show result";
         showButton.addEventListener('click', () => {
-        showButton.href = "result.html";
+        document.styleSheets[1].disabled = true;
+        document.styleSheets[2].disabled = false;
+        document.getElementById("wrapper-game").style.display = "none";
+        document.getElementById("wrapper-result").style.display = "flex";
+        showResult();
         });
     }
 }
 
 function resetState() {
-    testArray = [];
     for (let x = 0; x < 4; x++) {
         answerButtons[x].removeAttribute("data-correct");
         answerButtons[x].classList.remove("correct");
         answerButtons[x].classList.remove("wrong");
+        answerButtons[x].disabled = false;
     }
     rightWrongH1.style.visibility = "hidden";
     nrCorrectsInQuestion = 0;
@@ -181,10 +114,8 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add("correct");
-        testArray.push(element);
     } else {
         element.classList.add("wrong");
-        testArray.push(element);
     }
 }
 
@@ -193,8 +124,26 @@ function clearStatusClass(element) {
     element.classList.remove("wrong");
 
 }
-// function resultPage(){
-//     let titles = ["Master","Champion","Looser"]; 
-//     document.getElementById("nrOfCorrectAnswers").innerHTML = "You got " + "<span>" + quiz.correctAnswers + "</span>" + " of" + " <span>" + quiz.numberOfQuestions + "</span>" + " questions right!";
-// }
+function showResult(){
+    let titles = ["Master","Champion","Average","Bad"]; 
+    let nrOfCorrects = document.getElementById("nrOfCorrectAnswers");
+    let showTitle = document.getElementById("title");
+    let username = document.getElementById("username");
+    nrOfCorrects.innerHTML = "You scored " + "<span>" + quiz.correctAnswers + "</span>" + " of" + " <span>" + quiz.maxScore + "</span>" + " points right!";
+    username.innerHTML = quiz.username;
+    if(quiz.correctAnswers == quiz.maxScore){
+        showTitle.innerHTML = titles[0];
+    }
+    else if(quiz.correctAnswers > 3){
+        showTitle.innerHTML = titles[1];
+    }
+    else if(quiz.correctAnswers >= 2){
+        showTitle.innerHTML = titles[2];
+    }
+    else if(quiz.correctAnswers < 2){
+        showTitle.innerHTML = titles[3];
+    }
+
+    return;
+}
 

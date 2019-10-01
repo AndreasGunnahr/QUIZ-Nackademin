@@ -3,9 +3,10 @@ class Quiz {
         this.username = "";                 // Spelarens användarnamn
         this.numberOfQuestions = 1;         // Antal frågor som spelaren vill ha. 
         this.thisGameQuestions = [];        // Vilka frågor som ingår i spelomgången.
-        this.correctAnswers = 0;           // Antal svar som är rätt av användaren.
-        this.wrongAnswers = 0;   
-        this.prevQuestion = [];          // Antal svar som är fel av användaren.
+        this.correctAnswers = 0;            // Antal svar som är rätt av användaren.
+        this.maxScore = 0;                  // Maximalt antal rätt användaren kan ha. 
+        this.wrongAnswers = 0;              // Antal svar som är fel av användaren.
+        this.prevQuestion = [];             // Antal svar som är fel av användaren.
     }
 
     addQuestion(){
@@ -70,4 +71,6 @@ startButton.addEventListener("click", () => {
 
 let quiz = new Quiz();
 document.styleSheets[1].disabled = true;
+document.styleSheets[2].disabled = true;
 document.getElementById("wrapper-game").style.display = "none";
+document.getElementById("wrapper-result").style.display = "none";
