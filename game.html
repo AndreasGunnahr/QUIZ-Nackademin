@@ -14,101 +14,104 @@
     <script src="https://kit.fontawesome.com/fca6d7d29b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id = "wrapper-settings">
-        <div class = "header-container">
-            <h1 class = "top-h1">Settings</h1>
-        </div>
-        <div class = "form-container">
-            <form>
-                <div class = "input">
-                    <label class = "label-username" for = "username">Playername</label>
-                    <input id = "userinput" class = "username" placeholder = "Enter your username">
-                </div>
-                <h1 class = "select-h1">Choose your question category</h1>
-                <select id = "category">
-                    <option value = "Sport">Sport</option>
-                    <option value = "Programming">Programming</option>
-                    <option value = "Food">Food</option>
-                </select>
-                <h1 class = "addRemove-h1">Choose how many questions you want</h1>
-                <div class = "add-question">
-                    <button id = "add" class = "add" type='button'>+</button>
-                    <h1 id = "nrQuestions" class = "nrOfQuestions">1</h1>
-                    <button  id = "remove" class = "remove" type='button'>-</button>
-                </div>
-            </form>
-        </div>
-        <div class = "footer">
-            <div class = "button-container">
-                <a href = "index.html" class = "back">Back</a>
-                <a href = "#" id = "start-btn" class = "start-game">Start game</a>
+    <div id = "main-wrapper">
+        <div id = "wrapper-settings">
+            <div class = "header-container">
+                <h1 class = "top-h1">Settings</h1>
             </div>
-        </div>
-    </div>
-    <div id = "wrapper-game">
-        <div class = "header-container">
-            <h1 id = "nrOfQuestions" class = "header-h1">Question 1 of 4</h1>
-        </div>
-        <div class = "question-container">
-            <div class = "outer-container">
-                <div class = "inner-container">
-                    <h1 id = "category-h1" class = "category"></h1>
-                    <h1 id = "question" class = "question">Question</h1>
+            <div class = "form-container">
+                <form>
+                    <div class = "input">
+                        <label class = "label-username" for = "username">Playername</label>
+                        <input id = "userinput" class = "username" placeholder = "Enter your username">
+                    </div>
+                    <h1 class = "select-h1">Choose your question category</h1>
+                    <select id = "category">
+                        <option value = "Sport">Sport</option>
+                        <option value = "Programming">Programming</option>
+                        <option value = "Food">Food</option>
+                    </select>
+                    <h1 class = "addRemove-h1">Choose how many questions you want</h1>
+                    <div class = "add-question">
+                        <button id = "add" class = "add" type='button'>+</button>
+                        <h1 id = "nrQuestions" class = "nrOfQuestions">1</h1>
+                        <button  id = "remove" class = "remove" type='button'>-</button>
+                    </div>
+                </form>
+            </div>
+            <div class = "footer">
+                <div class = "button-container">
+                    <a href = "index.html" class = "back">Back</a>
+                    <a href = "#" id = "start-btn" class = "start-game">Start game</a>
                 </div>
             </div>
         </div>
-        <h1 id = "nrOfAnswers" class = "nrOfAnswers"></h1>
-        <div id = "answer-buttons" class = "button-container">
-            <!-- Fel - <i class="fas fa-times-circle"> -->
-            <!-- Korrekt - <i class="fas fa-check-circle"> -->
-            <button class = "answer">Answer 1</button>
-            <button class = "answer">Answer 2</button>
-            <button class = "answer">Answer 3</button>
-            <button class = "answer">Answer 4</button>
-        </div>
-        <div id = "CW-container" class = "CW-container">
-            <h1 class = "CW-h1"></h1>
-        </div>
-        <div class = "footer">
-            <div class = "bottom-container">
-                <!-- <a id = "back-btn" href = "#" class = "back">Back</a> -->
-                <a id = "next-btn" href = "#" class = "next-question">Next question</a>
+        <div id = "wrapper-game">
+            <div class = "header-container">
+                <h1 id = "nrOfQuestions" class = "header-h1">Question 1 of 4</h1>
             </div>
-        </div>
-    </div>
-    <div id = "wrapper-result">
-            <h1 class = "header-h1">SCORE</h1>
-            <div class = "circle-container">
-                <div class = "upper-container">
-                    <i class="fas fa-trophy"></i>
-                    <i class="fas fa-medal"></i>
-                </div>
-                <div class = "lower-container">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star second"></i>
-                </div>
-        
-            </div>
-            <h1 id = "usertext"> Good job <span id = "username"></span></h1>
-            <div class = "outer-container">
-                <div class = "text-container">
-                    <div class = "circle"><i class="fas fa-star"></i></div>
-                    <h1 id = "nrOfCorrectAnswers">Number of</h1>
-                </div>
-                <div class = "text-container">
-                    <div class = "circle"><i class="fas fa-crown"></i></div>
-                    <h1 class = "title">You are a <span id = "title"> Master</span> player</h1>
-    
+            <div class = "question-container">
+                <div class = "outer-container">
+                    <div class = "inner-container">
+                        <h1 id = "category-h1" class = "category"></h1>
+                        <h1 id = "question" class = "question">Question</h1>
+                    </div>
                 </div>
             </div>
-    
+            <h1 id = "nrOfAnswers" class = "nrOfAnswers"></h1>
+            <div id = "answer-buttons" class = "button-container">
+                <!-- Fel - <i class="fas fa-times-circle"> -->
+                <!-- Korrekt - <i class="fas fa-check-circle"> -->
+                <button class = "answer">Answer 1</button>
+                <button class = "answer">Answer 2</button>
+                <button class = "answer">Answer 3</button>
+                <button class = "answer">Answer 4</button>
+            </div>
+            <div id = "CW-container" class = "CW-container">
+                <h1 class = "CW-h1"></h1>
+            </div>
             <div class = "footer">
                 <div class = "bottom-container">
-                    <a href = "index.html" class = "back-start">Back to start</a>
-                    <a id = "play-again-btn" href = "settings.html">Play again</a>
+                    <!-- <a id = "back-btn" href = "#" class = "back">Back</a> -->
+                    <a id = "next-btn" href = "#" class = "next-question">Next question</a>
                 </div>
             </div>
         </div>
+        <div id = "wrapper-result">
+                <h1 class = "header-h1">SCORE</h1>
+                <div class = "circle-container">
+                    <div class = "upper-container">
+                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class = "lower-container">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star second"></i>
+                    </div>
+            
+                </div>
+                <h1 id = "usertext"> Good job <span id = "username"></span></h1>
+                <div class = "outer-container">
+                    <div class = "text-container">
+                        <div class = "circle"><i class="fas fa-star"></i></div>
+                        <h1 id = "nrOfCorrectAnswers">Number of</h1>
+                    </div>
+                    <div class = "text-container">
+                        <div class = "circle"><i class="fas fa-crown"></i></div>
+                        <h1 class = "title">You are a <span id = "title"> Master</span> player</h1>
+
+                    </div>
+                </div>
+
+                <div class = "footer">
+                    <div class = "bottom-container">
+                        <a href = "index.html" class = "back-start">Back to start</a>
+                        <a id = "play-again-btn" href = "game.html">Play again</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
     <script src="js/readjson.js"></script>
     <script src = "js/settings.js"></script>
 </body>

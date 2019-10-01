@@ -26,10 +26,12 @@ body{
 }
 
 #wrapper-settings{
+    /* min-width: 900px; */
     height: 100vh;
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .top-h1{
@@ -133,7 +135,7 @@ form button{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: -5px;
+    margin-bottom: 20px;
 }
 
 
@@ -148,3 +150,28 @@ form button{
     font-size: 12px;
     font-weight: 900;
 }   
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}
