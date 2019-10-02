@@ -200,7 +200,8 @@ select{
 @media only screen and (min-width: 475px) {
     .top-h1{
         font-size: 60px;
-        margin-top: -200px;
+        /* margin-top: -200px; */
+        margin-top: -150px;
         letter-spacing: 5px;
     }
 
@@ -213,7 +214,7 @@ select{
     .select-h1,
     .addRemove-h1{
         font-size: 12px;
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
     .form-container{
@@ -231,7 +232,7 @@ select{
 @media only screen and (min-width: 604px) {
     .top-h1{
         font-size: 60px;
-        margin-top: -200px;
+        margin-top: -150px;
     }  
     .username,
     #category{
@@ -244,7 +245,7 @@ select{
     .select-h1,
     .addRemove-h1{
         font-size: 14px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .form-container{
@@ -272,13 +273,13 @@ select{
 @media only screen and (min-width: 1200px) {
     .top-h1{
         font-size: 70px;
-        margin-top: -225px;
+        margin-top: -200px;
     }
     
     .label-username,
     .select-h1{
         font-size: 14px;
-        margin-top: 25px;
+        margin-top: 15px;
     }
     .add,
     .remove{
