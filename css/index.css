@@ -18,7 +18,7 @@
 
 #wrapper{
     height: 100vh;
-    background-image: url("../images/bg-image.jpg");
+    background-image: url("../images/bg-4.png");
     background-size: cover;
     display:flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    margin-top: -80px;
 }
 
 .top-h1,
@@ -56,7 +56,6 @@
 }
 
 .button-container{
-    width: 70%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -66,29 +65,23 @@
 
 .button-container a{
     width: 100%;
-    padding: 15px 0 15px 0;
-    /* height: 40px; */
-    border-radius: 15px;
-    margin-top:20px;
+    padding: 20px 90px 20px 90px;
+    border-radius: 10px;
+    margin-top:10px;
     background: var(--main-bg-color);
     border-color: var(--main-bg-color);
     color: var(--second-h1-color);
     font-family: var(--main-text-font);
     text-decoration: none;
     font-size: 12px;
-    font-weight: 900;
     text-align: center;
     cursor: pointer;
 }
 
 .footer{
-    height: 100%;
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 10px;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer-h1{
@@ -98,27 +91,112 @@
 }
 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 375px) {
+    .header-container{
+        margin-top: -140px;
+    }
+    
+    .top-h1,
+    .bottom-h1,
+    .middle-h1{
+        font-size: 26px;
+        font-family: var(--second-h1-font);
+        color: var(--second-h1-color);
+        letter-spacing: 5px;
+    }
+    .middle-h1{
+        font-size: 76px;
+        font-family: var(--main-h1-font);
+    }
+    .button-container a{
+        width: 100%;
+        padding: 20px 120px 20px 120px;
+        margin-top: 15px;
+        font-size: 12px;
 
+    }
+
+    .footer-h1{
+        font-size: 12px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .header-container{
+        margin-top: -200px;
+    }
+    .top-h1,
+    .bottom-h1,
+    .middle-h1{
+        font-size: 30px;
+        font-family: var(--second-h1-font);
+        color: var(--second-h1-color);
+        letter-spacing: 5px;
+    }
 
-}
+    .middle-h1{
+        font-size: 100px;
+        font-family: var(--main-h1-font);
+    }
+    .button-container a{
+        width: 100%;
+        padding: 25px 140px 25px 140px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
+    .footer-h1{
+        font-size: 14px;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+    .header-container{
+        margin-top: -250px;
+    }
     
+    .top-h1,
+    .bottom-h1,
+    .middle-h1{
+        font-size: 35px;
+        font-family: var(--second-h1-font);
+        color: var(--second-h1-color);
+        letter-spacing: 5px;
+    }
+    
+    .top-h1{
+        margin-bottom: -20px;
+    }
+    
+    .bottom-h1{
+        margin-top: -5px;
+    }
+    
+    .middle-h1{
+        font-size: 120px;
+        font-family: var(--main-h1-font);
+    }
+    .button-container a{
+        width: 100%;
+        padding: 25px 180px 25px 180px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .footer-h1{
+        font-size: 14px;
+    }
 }
+
+@media only screen and (min-width: 1200px) {
+    .button-container a{
+        width: 100%;
+        padding: 30px 220px 30px 220px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+}
+

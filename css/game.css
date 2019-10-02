@@ -16,17 +16,10 @@
     --main-text-font:'Roboto', sans-serif;
 }
 
-/* body{
-   
-    display:flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 
 #wrapper-game{
     height: 100vh;
-    background:#E0F618 url("../images/bg-image.jpg");
+    background:#E0F618 url("../images/bg-5.jpg");
     background-size: cover;
     display:flex;
     flex-direction: column;
@@ -98,7 +91,6 @@
     font-size: 13px;
     font-family: var(--second-h1-font);
     color: var(--main-bg-color);
-    text-transform: capitalize;
     margin-top: 10px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -165,12 +157,11 @@
 }
 
 .CW-h1{
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
     font-family: var(--main-text-font);
     font-weight: 900;
     visibility: hidden;
-    margin-top: 10px;
 }
 
 .footer{
@@ -178,7 +169,6 @@
     position: absolute;
     bottom: 0;
 }
-
 
 .footer .bottom-container a{
     padding: 20px 90px 20px 90px;
@@ -227,7 +217,7 @@
         font-size: 22px;
     }
     .footer{
-        height: 50px;
+        height: 60px;
     }
     .footer .bottom-container a{
         padding: 20px 90px 20px 90px;
@@ -260,7 +250,7 @@
         font-size: 30px;
     }
     .nrOfAnswers{
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 20px;
     }
     .question{
@@ -273,15 +263,54 @@
         width: 400px;
     }
     .CW-h1{
-        font-size: 22px;
+        font-size: 24px;
         margin-top: 20px;
-    }
-    .footer{
-        height: 80px;
     }
     .footer .bottom-container a{
         padding: 25px 200px 25px 200px;
         font-size: 14px;
     }
 }
+
+
+@media only screen and (min-width: 1200px) {
+    .header-h1{
+    font-size: 60px;
+    margin-top: -125px;
+    }
+    .outer-container{
+        height: 260px;
+        width: 480px;
+    }
+    .inner-container{
+        height: 240px;
+        width: 460px;
+    }
+    .category{
+        font-size: 35px;
+    }
+    .nrOfAnswers{
+        font-size: 20px;
+    }
+    .question{
+        font-size: 14px;
+        padding: 0 20px 0 20px;
+    }
+    .answer{
+        font-size: 14px;
+        height: 55px;
+        width: 450px;
+    }
+    .CW-h1{
+        font-size: 26px;
+        margin-top: 20px;
+    }
+    .footer .bottom-container a{
+        padding: 30px 220px 30px 220px;
+    }
+    /* .footer{
+        height: 65px;
+    } */
+}
+
 

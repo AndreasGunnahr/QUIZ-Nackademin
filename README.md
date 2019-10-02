@@ -11,8 +11,8 @@ Quiz application
 - [x]: Fixa så användaren inte kan trycka på samma svar igen. 
 - [x]: Fixa så att användaren inte kan gå vidare förens de valt ett eller flera svar. 
 
-STARTED: Responsive design. 
-- [x]: Setting och Game sidorna är klara.
-- [ ]: Result och Index sidorna är kvar.
-- [ ]: Fundera på desgin val. 
-- [ ]: Fixa lite fel hantering (Användaren måste ange sitt namn innan man startar t.ex.)
+
+- [x]: Responsive design för Setting och Game sidorna.
+- [x]: Responsive design för Index och Result sidorna.
+- [x]: Fundera på desgin val. (Ändring: valet kring att ha olika bilder som bakgrund)
+- [ ]: Fixa fel hantering (Användaren måste ange sitt namn innan man startar t.ex.)

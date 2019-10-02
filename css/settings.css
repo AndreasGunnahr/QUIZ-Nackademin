@@ -19,7 +19,7 @@
 
 #wrapper-settings{
     height: 100vh;
-    background:#E0F618 url("../images/bg-image.jpg") no-repeat;
+    background:#E0F618 url("../images/bg-4.png") no-repeat;
     background-size: cover;
     display:flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
 }
 
 .top-h1{
-    font-size: 40px;
+    font-size: 45px;
     font-family: var(--second-h1-font);
     text-transform: uppercase;
     color: var(--second-h1-color);
@@ -55,6 +55,8 @@
     border-radius: 5px;
     padding-left: 5px;
     font-size: 12px;
+    width: 250px;
+    font-family: var(--main-text-font);
 }
 
 .label-username{
@@ -78,6 +80,7 @@ select{
     padding-left: 5px;
     background:#ffffff;
     font-size: 12px;
+    font-family: var(--main-text-font);
     /* -webkit-appearance:none; */
 }
 
@@ -87,8 +90,8 @@ select{
     justify-content: center;
     align-items: center;
     outline: none;
-    width: 80px;
-    height: 40px;
+    width: 90px;
+    height: 45px;
     border-radius: 10px;
     background: var(--main-bg-color);
     border-color: var(--main-bg-color);
@@ -120,6 +123,7 @@ select{
 
 .nrOfQuestions{
     padding: 0 15px 0 15px;
+    font-size: 35px;
 }
 
 
@@ -127,7 +131,6 @@ select{
     height: 45px;
     position: absolute;
     bottom: 0;
-
 }
 
 
@@ -147,14 +150,15 @@ select{
 @media only screen and (min-width: 375px) {
     .top-h1{
         font-size: 55px;
-        margin-top: -100px;
+        margin-top: -150px;
         letter-spacing: 5px;
     }
 
     .username,
     #category{
-        height: 40px;
+        height: 50px;
         font-size: 12px;
+        width: 300px;
     }
 
     .label-username,
@@ -167,6 +171,7 @@ select{
     .form-container{
         height: 350px;
         width: 350px;
+        margin-top: -50px;
     }
 
     .add,
@@ -182,16 +187,48 @@ select{
 
     .footer .button-container a{
         font-size: 14px;
+        padding: 20px 60px 20px 60px;
+
     }   
 
     .footer{
-       height: 50px;
+        height: 60px;
     }
 
 }
 
+@media only screen and (min-width: 475px) {
+    .top-h1{
+        font-size: 60px;
+        margin-top: -200px;
+        letter-spacing: 5px;
+    }
+
+    .username,
+    #category{
+        font-size: 12px;
+    }
+
+    .label-username,
+    .select-h1,
+    .addRemove-h1{
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .form-container{
+        height: 350px;
+        width: 350px;
+    }
+
+    .footer .button-container a{
+        padding: 20px 80px 20px 80px;
+
+    }   
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 604px) {
     .top-h1{
         font-size: 60px;
         margin-top: -200px;
@@ -227,11 +264,40 @@ select{
     }
 
     .footer .button-container a{
-        padding: 25px 100px 25px 100px;
+        padding: 25px 120px 25px 120px;
+        font-size: 14px;
+    }   
+}
+
+@media only screen and (min-width: 1200px) {
+    .top-h1{
+        font-size: 70px;
+        margin-top: -225px;
+    }
+    
+    .label-username,
+    .select-h1{
+        font-size: 14px;
+        margin-top: 25px;
+    }
+    .add,
+    .remove{
+        width: 110px;
+        height: 60px;  
+    }
+    .nrOfQuestions{
+        font-size: 50px;
+    }
+
+    .form-container{
+        margin-top: -50px;
+    }
+    .footer .button-container a{
+        padding: 30px 120px 30px 120px;
         font-size: 14px;
     }   
 
     .footer{
-        height: 80px;
+        height: 60px;
     }
 }

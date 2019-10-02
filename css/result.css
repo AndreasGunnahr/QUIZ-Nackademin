@@ -5,7 +5,7 @@
 }
 
 :root{
-    --main-h1-color: #403333;
+    --main-h1-color: black;
     --second-h1-color: white;
     --main-bg-color: #3B4498;
     --second-bg-color: #52A0D4;
@@ -16,18 +16,14 @@
     --main-text-font:'Roboto', sans-serif;
 }
 
-#main-wrapper{
-    /* min-width: 1000px; */
-    /* max-width: 1000px; */
-}
-
 #wrapper-result{
     height: 100vh;
-    background:#FF0000;
+    background: url("/images/bg-6.jpg");
     background-size: cover;
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -35,19 +31,20 @@
 .header-h1{
     font-family: var(--second-h1-font);
     color: var(--second-h1-color);
-    font-size: 50px;
-    padding-top: 30px;
+    font-size: 45px;
     letter-spacing: 2px;
+    margin-top: -80px;
+    margin-bottom: 20px;
 }
 
 .circle-container{
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background-color: #A44343;
+    border: 3px solid #FFD700;
     display:flex;
     flex-direction: column;
-     justify-content: center;
+    justify-content: center;
     align-items: center; 
 }
 
@@ -70,7 +67,7 @@
 
 .fa-star{
     color: #FFD700;
-    font-size: 30px; 
+    font-size: 35px; 
 }
 
 .lower-container .second{
@@ -78,51 +75,53 @@
 }
 
 .outer-container{
-    width: 100%;
-    margin-left: 40px;
-    /* margin-top: 10px; */
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .circle{
     height: 35px;
     width: 35px;
-    background-color: #A44343;
+    border: 3px solid #FFD700;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.circle .fa-star{
-    font-size: 20px;
-}
-
+.circle .fa-star,
 .fa-crown{
-    font-size: 20px;
+    font-size: 15px;
     color:#FFD700;
 }
 
 .text-container{
     display:flex;
     align-items: center;
+    justify-content: center;
     margin-top: 10px;
+    color: var(--second-h1-color);
 }
 
 #usertext{
+    color: var(--second-h1-color);
     font-size: 15px;
     font-family: var(--main-text-font);
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #username{
+    color: black;
     font-size: 20px;
     font-family: var(--second-h1-font);
     letter-spacing: 2px;
     text-transform: capitalize;
+    margin-left: 5px;
 }
 
 #nrOfCorrectAnswers{
-    font-size: 15px;
+    font-size: 12px;
     font-family: var(--main-text-font);
     font-weight: 900;
     margin-left: 10px;
@@ -132,11 +131,12 @@
     font-size: 20px;
     font-family: var(--second-h1-font);
     font-weight: 900;
-
+    color: black;
+    padding: 0 3px 0 3px;
 }
 
 .title{
-    font-size: 15px;
+    font-size: 12px;
     font-family: var(--main-text-font);
     font-weight: 900;
     margin-left: 10px;
@@ -146,17 +146,20 @@
     font-size: 20px;
     font-family: var(--second-h1-font);
     letter-spacing: 1px;
+    color: black;
+    padding: 0 3px 0 3px;
 }
 
 .footer{
-    margin-top: 75px;
-    display:flex;
-    justify-content: center;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
 }
 
 
-.footer .bottom-container a{
-    padding: 15px 40px 15px 40px;
+.back-start,
+.play-again{
+    padding: 20px 40px 20px 40px;
     border-radius: 10px;
     background: var(--main-bg-color);
     border-color: var(--main-bg-color);
@@ -164,31 +167,171 @@
     font-family: var(--main-text-font);
     text-decoration: none;
     font-size: 12px;
-    font-weight: 900;
+    margin: 5px;
 } 
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 375px) {
+    .header-h1{
+        font-size: 55px;
+        margin-top: -90px;
+        letter-spacing: 5px;
+    }
+    .circle-container{
+        height: 250px;
+        width: 250px;
+    }
+    .fa-medal{
+        font-size: 60px;
+    }
+    
+    .fa-trophy{
+        font-size: 100px;
+    }
+    
+    .lower-container .fa-star{
+        font-size: 40px; 
+        margin-top: 20px;
+    }
+    #usertext{
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    #username{
+       font-size: 22px;
+    }
+    #nrOfCorrectAnswers{
+        font-size: 14px;
+    }
+    .title{
+        font-size: 14px;
+    }
+    .circle{
+        height: 45px;
+        width: 45px;
+    }
+    .circle .fa-star,
+    .fa-crown{
+        font-size: 22px;
+    }
+
+    .back-start,
+    .play-again{
+        font-size: 14px;
+        padding: 20px 50px 20px 50px;
+
+    } 
+    .footer{
+        height: 60px;
+    }
 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .header-h1{
+        font-size: 65px;
+        margin-top: -140px;
+        margin-bottom: 20px;
+        letter-spacing: 5px;
+    }
+    .circle-container{
+        height: 275px;
+        width: 275px;
+    }
+    .fa-medal{
+        font-size: 70px;
+    }
+    
+    .fa-trophy{
+        font-size: 110px;
+    }
+    
+    .lower-container .fa-star{
+        font-size: 45px; 
+    }
+    .text-container{
+        margin-top: 20px;
+    }
+    #usertext{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    #username{
+       font-size: 22px;
+    }
+    #nrOfCorrectAnswers{
+        font-size: 14px;
+    }
+    .title{
+        font-size: 14px;
+    }
+    .circle{
+        height: 50px;
+        width: 50px;
+    }
+    .circle .fa-star,
+    .fa-crown{
+        font-size: 25px;
+    }
 
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
+    .back-start,
+    .play-again{
+        font-size: 14px;
+        padding: 25px 105px 25px 105px;
+    } 
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .header-h1{
+        font-size: 70px;
+    }
+    .circle-container{
+        height: 300px;
+        width: 300px;
+    }
+    .fa-medal{
+        font-size: 80px;
+    }
     
+    .fa-trophy{
+        font-size: 120px;
+    }
+    
+    .lower-container .fa-star{
+        font-size: 50px; 
+        margin-top: 20px;
+    }
+    #usertext{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    #username{
+    font-size: 25px;
+    }
+    #nrOfCorrectAnswers{
+        font-size: 16px;
+    }
+    .title{
+        font-size: 16px;
+    }
+    .circle{
+        height: 45px;
+        width: 45px;
+    }
+    .circle .fa-star,
+    .fa-crown{
+        font-size: 22px;
+    }
+
+    .back-start,
+    .play-again{
+        font-size: 14px;
+        padding: 30px 120px 30px 120px;
+    } 
+    .footer{
+        height: 60px;
+    }
 }
