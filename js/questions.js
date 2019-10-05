@@ -1,29 +1,27 @@
-// En klass som skapar strukturen för våra frågor.
+// Structure class for our question. 
 class Question {
-    constructor(category, question, answers,correct) {
-        this.category = category;                             // Frågekategori.
-        this.question = question;                             // Frågan.
-        this.answers = answers;                               // Svarsalternativ som även innehåller rätt- respektive fel svar. 
-        // this.correct = correct;                               // Fel respektive rätt svarsalternativ. 
+    constructor(category, question, answers) {
+        this.category = category;                             // Question category.
+        this.question = question;                             // Question.
+        this.answers = answers;                               // Question answers which include text and right/wrong boolean. 
+                                                    
     }        
 }
 
-// En klass som skapar våra frågor genom klassen Question.
+// A class which creating our questions using the class Question.
 class AddQuestion{
     constructor(){
         this.extractJSON(contentJSON);
     }
 
-    // Vi hämtar våra frågor från JSON och sorterar på antal/kategori som användaren angett. 
+    // Getting our questions from our JSON file and sorting on number of questions/category. 
     extractJSON(contentJSON){
         for(let questionJSON of contentJSON.questions){
             let answersArray = []; 
-            // let correctArray = [];
             let index = 0;
             if(quiz.pickedCategory == questionJSON.category){
                 for(let x = 0; x < 4; x++ ){
                     answersArray.push(questionJSON.answers[x]);
-                    // correctArray.push(questionJSON.answers[x].correct);
                 }
                 index += 1;
                 let question = new Question(questionJSON.category,questionJSON.question,answersArray);
@@ -40,5 +38,5 @@ class AddQuestion{
 
 
 // Reading in our JSON file with our getJSON function from readjson.js
-let contentJSON = getJSON("http://www.mocky.io/v2/5d90d7543000005200cacfee");
+let contentJSON = getJSON("http://www.mocky.io/v2/5d98b84f340000d316f48aa6");
 let addQuestion = new AddQuestion(contentJSON);

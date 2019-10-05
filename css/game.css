@@ -136,7 +136,7 @@
 
 .answer span{
     pointer-events: none;
-    margin-left: -20px;
+    margin-left: -40px;
 }
 
 .correct{
@@ -224,8 +224,6 @@
         padding: 20px 90px 20px 90px;
         font-size: 14px;
     }
-
-
 }
 
 
@@ -260,9 +258,13 @@
         padding: 0 20px 0 20px;
     }
     .answer{
-        font-size: 12px;
+        font-size: 14px;
         height: 50px;
         width: 400px;
+    }
+    .fa-times-circle,
+    .fa-check-circle{
+    font-size: 25px;
     }
     .CW-h1{
         font-size: 24px;
@@ -270,7 +272,6 @@
     }
     .footer .bottom-container a{
         padding: 25px 200px 25px 200px;
-        font-size: 14px;
     }
 }
 
@@ -280,13 +281,17 @@
     font-size: 60px;
     margin-top: -100px;
     }
+    .question-container{
+        margin-top: -20px;
+    }
+
     .outer-container{
-        height: 260px;
-        width: 480px;
+        height: 230px;
+        width: 460px;
     }
     .inner-container{
-        height: 240px;
-        width: 460px;
+        height: 210px;
+        width: 440px;
     }
     .category{
         font-size: 35px;
@@ -295,24 +300,27 @@
         font-size: 20px;
     }
     .question{
-        font-size: 14px;
+        font-size: 16px;
         padding: 0 20px 0 20px;
     }
     .answer{
-        font-size: 14px;
+        font-size: 16px;
         height: 55px;
         width: 450px;
     }
+    .fa-times-circle,
+    .fa-check-circle{
+    font-size: 30px;
+    }
     .CW-h1{
         font-size: 26px;
-        /* margin-top: 10px; */
     }
     .footer .bottom-container a{
-        padding: 30px 220px 30px 220px;
+        padding: 25px 220px 25px 220px;
     }
-    /* .footer{
-        height: 65px;
-    } */
+    .footer{
+        height: 50px;
+    }
 }
 
 

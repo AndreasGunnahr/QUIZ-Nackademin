@@ -2,122 +2,122 @@
     "questions" :[
         {
             "category": "Sport",
-            "question": "Vilken fotbollsspelare har spelat allra flest landskamper i svenska fotbollslandslaget?",
+            "question": "What sports are included in Nordic combination?",
             "answers": [
-                { "text": "Henrik Larsson", "correct": false },
-                { "text": "Andreas Isaksson", "correct": false },
-                { "text": "Anders Svensson", "correct": true  },
-                { "text": "Carl Hörjström", "correct": false }
+                { "text": "Cross-country skiing", "correct": true },
+                { "text": "Biathlon", "correct": false },
+                { "text": "Slalom", "correct": false  },
+                { "text": "Ski jumping", "correct": true }
             ]
         },
         {
             "category": "Food",
-            "question": "What is 2 + 4?",
+            "question": "What is the main flavour in aioli?",
             "answers": [
-                { "text": "15", "correct": false },
-                { "text": "16", "correct": false },
-                { "text": "17", "correct": false },
-                { "text": "19", "correct": true }
+                { "text": "Garlic", "correct": true },
+                { "text": "Pepper", "correct": false },
+                { "text": "Egg", "correct": false },
+                { "text": "Salt", "correct": false }
             ]
         },
         {   
             "category": "Sport",
-            "question": "Vad är en ”Birdie” inom golf?",
+            "question": "What number lies between 5 and 9 on a British dart board?",
             "answers": [
-                { "text": "När man slår i bollen på ett enda slag", "correct": false },
-                { "text": "När man slår i bollen 1 slag över par", "correct": false },
-                { "text": "När man slår i bollen 1 slag under par", "correct": true },
-                { "text": "När man slår i bollen i ett vattenhål", "correct": false }
+                { "text": "11", "correct": false },
+                { "text": "12", "correct": true },
+                { "text": "13", "correct": false },
+                { "text": "14", "correct": false }
             ]
         },
         {
             "category": "Food",
-            "question": "What is 21d + 4?",
+            "question": "How is steak tartare cooked?",
             "answers": [
-                { "text": "15", "correct": false },
-                { "text": "16", "correct": false },
-                { "text": "17", "correct": false },
-                { "text": "19", "correct": true }
+                { "text": "It’s served raw", "correct": true },
+                { "text": "It's served rare", "correct": false },
+                { "text": "It's served medium", "correct": false },
+                { "text": "It's served well-done", "correct": false }
             ]
         },
         {
-            "category": "Programming",
-            "question": "What is 2 + 3",
+            "category": "Music",
+            "question": "which artist's world tour was called 'The Mrs Carter Show'?",
             "answers": [
-                { "text": "25", "correct": false },
-                { "text": "50", "correct": false },
-                { "text": "75", "correct": true },
-                { "text": "74", "correct": false }
+                { "text": "Madonna", "correct": false },
+                { "text": "Beyonce", "correct": true },
+                { "text": "Miley Cyrus", "correct": false },
+                { "text": "Rihanna", "correct": false }
             ]
         },
         {
             "category": "Food",
-            "question": "What is 2907 + 4?",
+            "question": "The rice dish 'paella' comes from which country?",
             "answers": [
-                { "text": "15", "correct": false },
-                { "text": "16", "correct": false },
-                { "text": "17", "correct": false },
-                { "text": "19", "correct": true }
+                { "text": "India", "correct": false },
+                { "text": "Spain", "correct": true },
+                { "text": "Ukraine", "correct": false },
+                { "text": "Ireland", "correct": false }
             ]
         },
         {   
             "category": "Sport",
-            "question": "Vilken idrott i Sverige har nästflest utövare i Sverige efter fotboll?",
+            "question": "Which country has played in every World Cup?",
             "answers": [
-                { "text": "Ishockey", "correct": false },
-                { "text": "Handboll", "correct": false },
-                { "text": "Innebandy", "correct": true },
-                { "text": "Simning", "correct": false }
+                { "text": "Brazil", "correct": true },
+                { "text": "Uruguay", "correct": false },
+                { "text": "Portugal", "correct": false },
+                { "text": "England", "correct": false }
             ]
         },
         {
-            "category": "Programming",
-            "question": "What is 299 + 3",
+            "category": "Music",
+            "question": "In which European city was the Swedish pop group ABBA formed in 1972?",
             "answers": [
-                { "text": "25", "correct": false },
-                { "text": "50", "correct": false },
-                { "text": "75", "correct": true },
-                { "text": "74", "correct": false }
+                { "text": "Berlin", "correct": false },
+                { "text": "London", "correct": false },
+                { "text": "Paris", "correct": false },
+                { "text": "Stockholm", "correct": true }
             ]
         },
         {
             "category": "Food",
-            "question": "What is 2 + 4123?",
+            "question": "Which two countries eat the largest amount of meat each year?",
             "answers": [
-                { "text": "15", "correct": false },
-                { "text": "16", "correct": false },
-                { "text": "17", "correct": false },
-                { "text": "19", "correct": true }
+                { "text": "USA", "correct": true },
+                { "text": "Kuwait", "correct": true },
+                { "text": "Australia", "correct": false },
+                { "text": "Ireland", "correct": false }
             ]
         },
         {   
             "category": "Sport",
-            "question": "Vilka två sporter ingår i en nordisk komination?",
+            "question": "Which was the first African country to qualify for a World Cup? (1934)",
             "answers": [
-                { "text": "Skidskytte & slalom", "correct": false },
-                { "text": "Backhoppning & längdskidåkning", "correct": true },
-                { "text": "Super G & konståkning", "correct": false },
-                { "text": "Ishockey & bandy", "correct": false }
+                { "text": "Cameroon", "correct": false },
+                { "text": "Nigeria", "correct": false },
+                { "text": "Egypt", "correct": true },
+                { "text": "Morocco", "correct": false }
             ]
         },
         {
-            "category": "Programming",
-            "question": "What is 23 + 3",
+            "category": "Music",
+            "question": "In which American city was Elvis discovered dead in 1977?",
             "answers": [
-                { "text": "25", "correct": false },
-                { "text": "50", "correct": false },
-                { "text": "75", "correct": true },
-                { "text": "74", "correct": false }
+                { "text": "Memphis", "correct": true },
+                { "text": "Miami", "correct": false },
+                { "text": "Las Vegas", "correct": false },
+                { "text": "Chicago", "correct": false }
             ]
         },
         {
-            "category": "Programming",
-            "question": "What is 210 + 3",
+            "category": "Music",
+            "question": "Which 2 artists have the biggest albums of 2019 so far?",
             "answers": [
-                { "text": "25", "correct": false },
-                { "text": "50", "correct": false },
-                { "text": "75", "correct": true },
-                { "text": "74", "correct": false }
+                { "text": "MOTION PICTURE CAST RECORDING", "correct": true },
+                { "text": "George Ezra", "correct": false },
+                { "text": "Lewis Capaldi", "correct": true },
+                { "text": "Ed Sheeran", "correct": false }
             ]
         }
     ]

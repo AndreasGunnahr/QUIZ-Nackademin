@@ -1,29 +1,33 @@
-let shuffledQuestions, currentQuestionIndex;
 const restartButton = document.getElementById("play-again-btn");
 const questionElement = document.getElementById("question");
-let answerButtons = document.getElementsByClassName("answer");
+const answerButtons = document.getElementsByClassName("answer");
 const nrQuestions = document.getElementById("nrQuestions");
-let nextButton = document.getElementById("next-btn");
+const nextButton = document.getElementById("next-btn");
 const backButton = document.getElementById("back-btn");
 const rightWrongH1 = document.getElementsByClassName("CW-h1")[0];
-const rightWrongContainer = document.getElementsByClassName("CW-container")[0];
-let nrCorrectsInQuestion = 0;
+let currentQuestionIndex;
 
 
-startGame();
+// Initialize our game. 
+if(nextButton){
+    startGame();
+}
+
 
 nextButton.addEventListener("click", () => {
-    if(nrCorrectsInQuestion == 0){
+    if(quiz.nrCorrectsInQuestion == 0){
         currentQuestionIndex++;
         setNextQuestion();
     }
 });
 
+// Starting our quiz game and calling our first question. 
 function startGame(){
     currentQuestionIndex = 0;
     setNextQuestion();
 }
 
+// Setting our next question after resetting our previous question form. 
 function setNextQuestion() {
     resetState();
     questionNumber = currentQuestionIndex + 1;
@@ -32,55 +36,47 @@ function setNextQuestion() {
     showQuestion(quiz.thisGameQuestions[currentQuestionIndex]);
 }
 
+// Displaying our question form and also adding our font awesome icons to the questions. 
 function showQuestion(question) { 
     questionElement.innerText = question.question;
+    // Depending on whether the answer is right/wrong, we give it an equivalent dataset value. Which we later can use to check
+    // if the question are right or wrong when the user click on a answer. 
     for (let x = 0; x < 4; x++) {
         if (question.answers[x].correct) {
             answerButtons[x].innerHTML =  "<i class='fas fa-check-circle'></i>" +  "<span>" + question.answers[x].text + "</span>";
             answerButtons[x].dataset.correct = question.answers[x].correct;
-            nrCorrectsInQuestion += 1;
+            quiz.nrCorrectsInQuestion += 1;
         }else{
             answerButtons[x].innerHTML =  "<i class='fas fa-times-circle'></i>" + "<span>" + question.answers[x].text + "</span>";
         }
         answerButtons[x].addEventListener('click', selectAnswer);
     }
-    document.getElementById("nrOfAnswers").innerHTML = "Pick " + nrCorrectsInQuestion + " answer";
+    document.getElementById("nrOfAnswers").innerHTML = "Pick " + quiz.nrCorrectsInQuestion + " answer";
 }
 
+// Resetting all our question states. 
+function resetState() {
+    for (let x = 0; x < 4; x++) {
+        answerButtons[x].removeAttribute("data-correct");
+        answerButtons[x].classList.remove("correct");
+        answerButtons[x].classList.remove("wrong");
+        answerButtons[x].disabled = false;
+    }
+    rightWrongH1.style.visibility = "hidden";
+    quiz.nrCorrectsInQuestion = 0;
+}
+
+// Collecting information about which answer button the user picked.  
 function selectAnswer(e) {
     let selectedButton = e.target;
     let correct = selectedButton.dataset.correct;
-    if(nrCorrectsInQuestion != 0){
-        selectedButton.disabled = true;
-        quiz.maxScore += 1;
-        for (let x = 0; x < 4; x++) {
-            if(nrCorrectsInQuestion > 1){
-                setStatusClass(e.target, selectedButton.dataset.correct);
-                nrCorrectsInQuestion = nrCorrectsInQuestion-1;
-                break;
-            }else if(nrCorrectsInQuestion == 1){
-                setStatusClass(e.target, selectedButton.dataset.correct); // Om vi vill få ut alla - answerButtons[x], answerButtons[x].dataset.correct
-                nrCorrectsInQuestion = 0; 
-
-            }
-        }
-        if(correct){
-            rightWrongH1.style.visibility = "visible";
-            rightWrongH1.style.color = "#20A220";
-            rightWrongH1.innerHTML = "CORRECT!";
-            quiz.correctAnswers += 1; 
-        }else{
-            rightWrongH1.style.visibility = "visible";
-            rightWrongH1.style.color = "#FF0000";
-            rightWrongH1.innerHTML = "WRONG!";
-            quiz.wrongAnswers += 1;
-        }
-    }
+    // Sending the information to our correct method in our class Quiz.
+    quiz.checkAnswer(selectedButton,correct); 
+    // If we have more questions then we just keep going.
     if (quiz.numberOfQuestions > currentQuestionIndex + 1) { 
-        // Om vi inte har slut på frågor så fortsätter vi bara. 
     }
-    else if(quiz.numberOfQuestions <= currentQuestionIndex + 1 && nrCorrectsInQuestion == 0) {
-        // Om vi har slut på frågor så visar vi Show result knappen. 
+    // If we have no more questions then we showing the result button.
+    else if(quiz.numberOfQuestions <= currentQuestionIndex + 1 && quiz.nrCorrectsInQuestion == 0) {
         nextButton.id = "show-btn";
         const showButton = document.getElementById('show-btn');
         showButton.innerHTML = "Show result";
@@ -94,31 +90,8 @@ function selectAnswer(e) {
     }
 }
 
-function resetState() {
-    for (let x = 0; x < 4; x++) {
-        answerButtons[x].removeAttribute("data-correct");
-        answerButtons[x].classList.remove("correct");
-        answerButtons[x].classList.remove("wrong");
-        answerButtons[x].disabled = false;
-    }
-    rightWrongH1.style.visibility = "hidden";
-    nrCorrectsInQuestion = 0;
-}
 
-function setStatusClass(element, correct) {
-    clearStatusClass(element);
-    if (correct) {
-        element.classList.add("correct");
-    } else {
-        element.classList.add("wrong");
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove("correct");
-    element.classList.remove("wrong");
-
-}
+// Showing our information on the result page
 function showResult(){
     let titles = ["Master","Champion","Average","Bad"]; 
     let nrOfCorrects = document.getElementById("nrOfCorrectAnswers");
