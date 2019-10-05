@@ -25,7 +25,7 @@ git clone https://github.com/AndreasGunnahr/Quiz.git
 ```
 4) Then download Visual studio code (or any other text editor you like)
 ```
-https://code.visualstudio.com/
+[https://code.visualstudio.com](https://code.visualstudio.com)
 ```
 5) Then download live server extension to your editor to run the application on a local server.
 ```
@@ -73,42 +73,8 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
+I used [Github](http://semver.org/) for versioning. 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Andreas Gunnahr** 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
-
-
-
-
-
-
-- [x]: Kom på ett bra sätt att använda klassen Quiz respektive Question.
-- [x]: Kolla hur man läser in en json file till en array då denna tar mycket plats i JS filen. 
-- [x]: Fixa så användaren inte kan klicka flera gånger på ett svar. 
-- [x]: Fixa till layouten i knapparna (svaren). 
-- [x]: Fundera på vart vi kan använda oss av spelarens nman. 
-- [x]: Kunna välja flera svar som är rätt
-- [x]: Fixa så användaren inte kan trycka på samma svar igen. 
-- [x]: Fixa så att användaren inte kan gå vidare förens de valt ett eller flera svar. 
-- [x]: Responsive design för Setting och Game sidorna.
-- [x]: Responsive design för Index och Result sidorna.
-- [x]: Fundera på desgin val. (Ändring: valet kring att ha olika bilder som bakgrund)
-- [x]: Kolla över lösningen med ett Correct method i Quiz klassen. 
-- [x]: Göra font awesome iconerna större? 
-- [x]: Kolla igenom kraven för uppgiften en sista gång.
-- [X]: Klar.
