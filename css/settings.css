@@ -81,7 +81,6 @@ select{
     background:#ffffff;
     font-size: 12px;
     font-family: var(--main-text-font);
-    /* -webkit-appearance:none; */
 }
 
 .add,
@@ -200,7 +199,6 @@ select{
 @media only screen and (min-width: 475px) {
     .top-h1{
         font-size: 60px;
-        /* margin-top: -200px; */
         margin-top: -150px;
         letter-spacing: 5px;
     }

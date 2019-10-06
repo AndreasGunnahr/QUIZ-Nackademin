@@ -42,7 +42,9 @@ In order to play, you need to follow these steps:
 
 5) Scroll to the end of the file and paste the address inside the getJSON function call. 
 
-6) Last step is to open index.html in your text editor and run it with live server. (Right click and click "Open with live server")
+6) Last step is to open index.html in your text editor and run it with live server. (Right click and pick "Open with live server")
+
+7) Enjoy your quiz! 
 
 
 ## Built With
