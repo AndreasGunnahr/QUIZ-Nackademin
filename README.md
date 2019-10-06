@@ -4,20 +4,15 @@ Exam assignment in the course Javascript 1 - Nackademin
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Installing
-
-
-
-
-In order to play you need to download the following:
 
 1) Open the console.
 
 2) Go to a desired installation location through the console.
 ```
-cd Desktop
+cd desktop
 ```
 3) Then clone my github repo.
 ```
@@ -25,55 +20,42 @@ git clone https://github.com/AndreasGunnahr/Quiz.git
 ```
 4) Then download Visual studio code (or any other text editor you like)
 ```
-[https://code.visualstudio.com](https://code.visualstudio.com)
+https://code.visualstudio.com
 ```
 5) Then download live server extension to your editor to run the application on a local server.
 ```
 Locate the extension tab and search for "live server". Then hit install. 
 ```
-6) 
+6) Done!
 
-7) DONE!
+### Playing
 
-End with an example of getting some data out of the system or using it for a little demo
+In order to play, you need to follow these steps: 
 
-## Running the tests
+1) Open the downloaded question.json file in your text editor and copy everything inside the file. 
 
-Explain how to run the automated tests for this system
+2) Then go [Mockey](https://www.mocky.io/). 
 
-### Break down into end to end tests
+3) Paste everything from our question.json file into the body section and hit generate my HTTP Response. 
 
-Explain what these tests test and why
+4) Copy the generated link address and go into our questions.js file. 
 
-```
-Give an example
-```
+5) Scroll to the end of the file and paste the address inside the getJSON function call. 
 
-### And coding style tests
+6) Last step is to open index.html in your text editor and run it with live server. (Right click and click "Open with live server")
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* HTML 
+* Javascript
+* CSS
+* JSON
 
 ## Versioning
 
-I used [Github](http://semver.org/) for versioning. 
+I used [Github](https://github.com/) for versioning. 
+
 ## Authors
 
 * **Andreas Gunnahr** 
